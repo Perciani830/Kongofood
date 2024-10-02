@@ -1,0 +1,341 @@
+html {
+    scroll-behavior: auto; /* Comportement de défilement */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* Défilement fluide */
+    background-color: #f9f9f9; /* Fond neutre */
+}
+.logo img {
+    max-height: 100px; /* Ajustez la taille selon vos besoins */
+    margin-bottom: none;
+    margin-top: 50px;
+}
+/* Section Accueil */
+#accueil {
+    height: 20vh; /* Réduit la hauteur à 60% de la hauteur de l'écran */
+    background-image:url('Couverture.png'); border-radius: 30px; /* Remplacez 'couverture.jpg' par le chemin de votre image */
+    background-size: cover; /* L'image couvre toute la section */
+    background-position: center; /* L'image est centrée */
+    display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement */
+    text-align: center; /* Centre le texte */
+    color: #fff; /* Couleur blanche pour le texte */
+    position: relative;
+}
+
+.cover-content {
+    z-index: 2; /* Met le contenu au-dessus de l'image de couverture */
+}
+
+#accueil::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(66, 66, 66, 0.442); /* Ajoute une superposition sombre */
+    border-radius: 30px;
+    z-index: none; /* Place l'overlay entre l'image et le contenu */
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #a04545; /* Change la couleur au survol */
+}
+
+
+header {
+    background-color: #4CAF50; /* Vert */
+    color: #fff;
+    padding: 2px;
+    text-align: center;
+}
+.site-title {
+    color: #fff; /* Couleur du texte du titre */
+    text-decoration: none; /* Enlève le soulignement du lien */
+}
+
+.site-title:hover {
+    text-decoration: none; /* Ajoute un soulignement lors du survol */
+}
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #4CAF50; /* Vert pour les titres */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #333; /* Texte sombre */
+}
+
+.gallery-container Cette section est désactivée
+ {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-image {
+    width: 300px;
+    margin: 30px;
+    transition: transform 0.3s;
+    border: 2px solid #4CAF50; /* Bordure verte */
+}
+
+.gallery-image:hover {
+    transform: scale(1.1);
+    border-color: #FF5733; /* Rouge au survol */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form input, form textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 2px solid #4CAF50; /* Bordure verte */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+form input:focus, form textarea:focus {
+    border-color: #FF5733; /* Rouge lors du focus */
+}
+
+button {
+    padding: 10px;
+    background-color: #FF5733; /* Rouge */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4CAF50; /* Vert au survol */
+}
+
+footer {
+    background-color: #4CAF50; /* Vert */
+    color: #fff;
+    text-align: center;
+    padding: 2px;
+}
+/* Section générale */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.about-section {
+    padding: 60px 20px;
+    background-color: #fff;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    justify-content: space-between; /* Espace entre les éléments */
+    max-width: 1000px;
+    margin: 0 auto;
+   
+}
+
+.about-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 30%; /* Chaque item prend environ 30% de la largeur */
+    margin-bottom: 40px; /* Espace entre les lignes */
+}
+
+.about-image {
+    max-width: 100%;
+    margin-bottom: 20px; /* Espace sous l'image */
+    
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   
+}
+
+.about-text {
+    .about-text {
+        text-align: center;
+        max-width: 500px;
+        
+    }
+    
+}
+
+.about-text h2 {
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    color: #333;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px; /* Distance du bas de la page */
+    right: 20px;   /* Distance du côté droit */
+    display: none; /* Masqué par défaut */
+    background-color: #006503; /* Couleur du bouton */
+    color: white; /* Couleur du texte */
+    border: none; /* Pas de bordure */
+    padding: 10px 15px; /* Espacement interne */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en forme de main */
+    z-index: 1000; /* S'assurer qu'il soit au-dessus des autres éléments */
+    width: auto; /* Largeur automatique */
+    max-width: 150px; /* Largeur maximale pour éviter de s'étendre trop */
+    text-align: center; /* Centrer le texte */
+}
+
+
+
+#scrollToTopBtn:hover {
+    background-color: #54b300;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-item {
+        flex-basis: 100%; /* Chaque item prend toute la largeur sur petits écrans */
+        max-width: 100%;
+    }
+
+    .about-text {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    transition: 0.2s;
+    color: #aaa;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #007BFF;
+}
+
+input:focus + label, textarea:focus + label,
+input:not(:placeholder-shown) + label, textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 10px;
+    font-size: 12px;
+    color: #007BFF;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
