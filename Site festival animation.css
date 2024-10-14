@@ -1,6 +1,8 @@
+/* Global Styles */
 html {
     scroll-behavior: auto; /* Comportement de défilement */
 }
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -16,7 +18,7 @@ body {
 /* Section Accueil */
 #accueil {
     height: 20vh; /* Réduit la hauteur à 60% de la hauteur de l'écran */
-    background-image:url('Couverture.png'); border-radius: 30px; /* Remplacez 'couverture.jpg' par le chemin de votre image */
+    background-image:url('Couverture.png'); border-radius: none ; /* Remplacez 'couverture.jpg' par le chemin de votre image */
     background-size: cover; /* L'image couvre toute la section */
     background-position: center; /* L'image est centrée */
     display: flex;
@@ -39,7 +41,7 @@ body {
     right: 0;
     bottom: 0;
     background-color: rgba(66, 66, 66, 0.442); /* Ajoute une superposition sombre */
-    border-radius: 30px;
+    border-radius: none;
     z-index: none; /* Place l'overlay entre l'image et le contenu */
 }
 
@@ -60,6 +62,7 @@ p {
     text-decoration: none;
     font-size: 1.2rem;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 .btn:hover {
@@ -67,12 +70,40 @@ p {
 }
 
 
-header {
-    background-color: #4CAF50; /* Vert */
-    color: #fff;
-    padding: 2px;
+/* Header */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Réduit l'espace entre les éléments */
+    padding: 10px; /* Réduit le padding pour un en-tête plus compact */
+    background-color: #4CAF50;
+}
+
+/* Ajustement du logo */
+.header-container .logo img {
+    width: 40px; /* Réduit la taille du logo */
+    height: auto;
+    margin-top: 10px; /* Réduit l'espace au-dessus du logo */
+}
+
+/* Titre du site */
+.header-container h1 {
+    font-size: 20px; /* Réduit la taille du texte du titre */
+    margin: 5px 0; /* Réduit les marges autour du titre */
     text-align: center;
 }
+
+.header-container h1 a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.header-container h1 a:hover {
+    color: #ffcc00;
+}
+
 .site-title {
     color: #fff; /* Couleur du texte du titre */
     text-decoration: none; /* Enlève le soulignement du lien */
@@ -83,20 +114,50 @@ header {
 }
 
 
+/* Navigation Bar */
+nav {
+    background-color: #ffffff;
+}
+
 nav ul {
     list-style: none;
-    padding: 0;
-    
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 10px 0;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #2c9200;
     text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+    transform: scale(1.05);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 section {
@@ -290,6 +351,7 @@ h2 {
 .form-group {
     margin-bottom: 15px;
     position: relative;
+    margin-bottom: 20px;
 }
 
 label {
@@ -305,6 +367,7 @@ input, textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    outline: none;
     transition: border-color 0.3s;
 }
 
@@ -335,6 +398,64 @@ button:hover {
     background-color: #0056b3;
 }
 
+/* Scroll to Top Button */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #006503;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    max-width: 150px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #54b300;
+}
+
+/* Footer */
+footer {
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .about-text {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .gallery-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
