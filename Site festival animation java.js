@@ -46,3 +46,9 @@ window.onscroll = function() {
 scrollToTopBtn.onclick = function() {
     smoothScroll(document.body, 1000); // Utilise smoothScroll pour le retour en haut
 };
+const menuIcon = document.querySelector('.menu-icon');
+const navLinks = document.querySelector('nav ul');
+
+menuIcon.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});

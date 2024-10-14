@@ -117,14 +117,19 @@ p {
 /* Navigation Bar */
 nav {
     background-color: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+/* Style des liens de navigation */
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
     margin: 0;
-    padding: 10px 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -160,19 +165,58 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
+/* Icône de menu pour mobile */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Style responsive */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Cache les liens sur mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: #ffffff;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul.active {
+        display: flex; /* Affiche les liens lorsque le menu est actif */
+    }
+
+    /* Icône de menu visible sur mobile */
+    .menu-icon {
+        display: block;
+        color: #2c9200;
+    }
+}
+
+
 section {
     padding: 60px 20px;
     text-align: center;
+    font-size: 15px;
 }
 
 h2 {
     color: #4CAF50; /* Vert pour les titres */
     text-align: center;
     margin-bottom: 20px;
+    font-size: 20px;
 }
 
 p {
     color: #333; /* Texte sombre */
+    font-size: 17px;
 }
 
 .gallery-container Cette section est désactivée
@@ -250,7 +294,7 @@ body {
     justify-content: space-between; /* Espace entre les éléments */
     max-width: 1000px;
     margin: 0 auto;
-   
+   font-size: 10px;
 }
 
 .about-item {
@@ -259,10 +303,11 @@ body {
     align-items: center;
     flex-basis: 30%; /* Chaque item prend environ 30% de la largeur */
     margin-bottom: 40px; /* Espace entre les lignes */
+    font-size: 10px;
 }
 
 .about-image {
-    max-width: 100%;
+    max-width: 50%;
     margin-bottom: 20px; /* Espace sous l'image */
     
 }
